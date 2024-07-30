@@ -1,0 +1,9 @@
+fastapi==0.68.2
+pydantic
+uvicorn==0.15.0
+sqlalchemy==2.0.31
+asyncpg==0.29.0
+transformers==4.43.3
+torch==2.4.0
+jinja2==3.0.3
+python-multipart==0.0.9

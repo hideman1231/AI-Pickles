@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  ai_pickles:
+    build: .
+    command: uvicorn app.main:app --reload --host 0.0.0.0
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    expose:
+      - 5432
+
+volumes:
+  postgres_data:

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+
+  .emoji {
+    font-size: 180px;
+  }
+
+{% endblock %}
+
+{% block content %}
+
+  <div>
+    {% if answer == 1 %}
+      <span class="emoji">&#x1F642</span>
+    {% elif answer == 2 %}
+      <span class="emoji">&#x1F615</span>
+    {% else %}
+      <span class="emoji">&#x1F610</span>
+    {% endif %}
+  </div>
+
+  <div>
+    <h1>
+      <a href="{{ url_for('home') }}">Try again</a>
+    </h1>
+  </div>
+
+{% endblock %}
