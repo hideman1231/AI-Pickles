@@ -9,7 +9,7 @@ class PostgreSQLSettings(BaseModel):
     url: str = 'postgresql+asyncpg://postgres:postgres@db/postgres'
     echo: bool = True
 
-    init_tables: bool = False
+    init_tables: bool = True
 
 
 class Settings(BaseSettings):
